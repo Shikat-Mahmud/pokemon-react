@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { PokemonCards } from "./PokemonCards";
 
 export const Pokemon = () => {
     const [pokemon, setPokemon] = useState([]);
@@ -47,8 +48,10 @@ export const Pokemon = () => {
             <div>
                 <ul className="cards">
                     {
-                        pokemon.map((curPoke) => {
-                            return <li key={curPoke.id}>{curPoke.name}</li>
+                        pokemon.map((curPokemon) => {
+                            return (
+                                <PokemonCards key={curPokemon.id} pokemonData={curPokemon}/>
+                            );
                         })
                     }
                 </ul>
